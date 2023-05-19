@@ -15,7 +15,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     // Case 1. Player Chooses Rock
-    if (playerSelection.charAt(0) == 'R' || playerSelection.charAt(0) == 'r' ){
+    if (playerSelection.toLowerCase() == 'rock'){
         
         if (computerSelection == 'Paper') {
             return 'Computer Won!'
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     //Case 2. Player Chooses Paper
-    else if (playerSelection.charAt(0) == 'P' || playerSelection.charAt(0) == 'p' ){
+    else if (playerSelection.toLowerCase() == 'paper'){
         
         if (computerSelection == 'Scissors') {
             return 'Computer Won!'
@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     //Case 3. Player Chooses Scissors
-    else if (playerSelection.charAt(0) == 'S' || playerSelection.charAt(0) == 's' ){
+    else if (playerSelection.toLowerCase() == 'scissors'){
         
         if (computerSelection == 'Rock') {
             return 'Computer Won!'
@@ -74,7 +74,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = "rock";
+let playerSelection = prompt('Rock, paper or scissors?');
 const computerSelection = getComputerChoice();
 console.log(computerSelection)
 console.log(playRound(playerSelection, computerSelection))
