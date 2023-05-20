@@ -1,3 +1,9 @@
+
+//Keeps track of player and computer score
+
+var playerScore = 0;
+var computerScore = 0;
+
 //Randomly Selects An Option for the Computer
 
 function getComputerChoice() {
@@ -18,11 +24,13 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() == 'rock'){
         
         if (computerSelection == 'Paper') {
-            return 'Computer Won!'
+            computerScore += 1;
+            return ('Computer Won! Your score is ' +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else if (computerSelection == 'Scissors') {
-            return "Player Won!"
+            playerScore += 1;
+            return ("Player Won! Your score is " +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else {
@@ -35,11 +43,13 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection.toLowerCase() == 'paper'){
         
         if (computerSelection == 'Scissors') {
-            return 'Computer Won!'
+            computerScore += 1;
+            return ('Computer Won! Your score is ' +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else if (computerSelection == 'Rock') {
-            return "Player Won!"
+            playerScore += 1;
+            return("Player Won! Your score is " +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else {
@@ -52,11 +62,13 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection.toLowerCase() == 'scissors'){
         
         if (computerSelection == 'Rock') {
-            return 'Computer Won!'
+            computerScore += 1;
+            return('Computer Won! Your score is ' +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else if (computerSelection == 'Paper') {
-            return "Player Won!"
+            computerScore += 1;
+            return("Player Won! Your score is " +  playerScore + ' and computer score is ' + computerScore)
         }
 
         else {
@@ -74,10 +86,36 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-let playerSelection = prompt('Rock, paper or scissors?');
-const computerSelection = getComputerChoice();
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection))
+playerScore = 0;
+computerScore = 0;
+
+function game() {
+
+
+}
+
+function game(){
+    while (playerScore <= 5 || computerScore <= 5){
+        if (playerScore == 5) {
+            return "Player Won"
+        }
+
+        else if (computerScore == 5) {
+            return "Computer Won"
+        }
+
+        else {
+            let playerSelection = prompt('Rock, paper or scissors?');
+            let computerSelection = getComputerChoice();
+            console.log("The computer picked: " + computerSelection)
+            console.log(playRound(playerSelection, computerSelection))
+        }
+
+    }    
+}
+
+console.log(game())
+
 
 
 
